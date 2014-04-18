@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+	<title>
+测试 | oopress～
+</title>
+	
+
+	<link rel="stylesheet" type="text/css" href="/static/default.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/static/ui.totop.css" media="all">
+	<link rel="stylesheet" href="/static/prism.css" />
+	<link rel="stylesheet" href="/static/style.css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">	
+
+	
+	
+
+	<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.png">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+
+
+	<header>
+
+		<h1><a title="Home" href="/" id="logo"><b>oopress～</b></a></h1>
+
+		<nav class="Tutorials">
+		
+			<a href="/音乐墙.html" class="active">音乐墙</a>
+		
+			<a href="/留言本.html" class="active">留言本</a>
+		
+			<a href="/关于oopress.html" class="active">关于oopress</a>
+		
+		</nav>
+
+		<a class="searchIcon" href="https://www.google.com.hk/search?q=site%3Ablog.letiantian.me&oq=site%3Ablog.letiantian.me" target="_blank">
+		</a>
+
+	</header>
+
+<section id="content">
+		<aside style="" id="sidebar">
+
+			<div class="sidebar-group about">
+				<p>天天向上</p>
+				
+			</div>
+
+
+			<div class="sidebar-group posts">
+				<h5 class="active">搜索</h5>
+				<ul class="active">
+										
+					<li>
+						<a href="https://www.google.com.hk/search?q=site%3Ablog.letiantian.me&oq=site%3Ablog.letiantian.me" target="_blank">
+							<span class="title">
+								Google
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.baidu.com/#wd=site%3Ablog.letiantian.me"  target="_blank">
+							<span class="title">
+								Baidu
+							</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			
+			<div class="sidebar-group posts">
+				<h5 class="active">查看文章</h5>
+				<ul class="active">
+										
+					<li>
+						<a href="/post">
+							<span class="title">
+								按日期查看
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/category">
+							<span class="title">
+								按分类查看
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/tag">
+							<span class="title">
+								按标签查看
+							</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			
+			<div class="sidebar-group posts">
+				<h5 class="active">近期文章</h5>
+				<ul class="active">
+				
+				
+										
+					<li>
+						<a href="/post/2014/04/18/oopress简易指南.html">
+							<span class="title">
+								oopress简易指南
+							</span>
+						</a>
+					</li>
+				
+										
+					<li>
+						<a href="/post/2014/04/11/测试.html">
+							<span class="title">
+								测试
+							</span>
+						</a>
+					</li>
+				
+				</ul>
+
+			</div>
+
+			<div class="sidebar-group posts">
+				<h5 class="active" >分类目录</h5>
+				<ul class="active">
+				
+				
+										
+					<li>
+						<a href="/category/index.html#oopress">
+							<span class="title">
+								oopress
+							</span>
+						</a>
+					</li>
+				
+				</ul>
+
+			</div>
+			
+
+			
+
+			
+			<div class="sidebar-group posts">
+				<h5 class="active" >链接</h5>
+				<ul  class="active">
+					<li>
+						<a href="http://hei-boy.tumblr.com/">
+							<span class="title">
+								嘿，boy
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://my.oschina.net/lotte1699/blog">
+							<span class="title">
+								樂天@OSC
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/someus">
+							<span class="title">
+								樂天@GitHub
+							</span>
+						</a>
+					</li>										
+				</ul>
+
+			</div>
+
+
+		</aside>
+		
+		<!-- 文章 -->
+		
+		<article id="post" class="leftPostCol">
+
+			
+			<div class="post-body">
+				<h2>测试</h2>
+
+				<p class="post-info">
+					<i class="icon-author"></i>作者： 樂天 <i class="icon-cal"></i>
+					<time>@ 2014-04-11</time>
+					<hr/>
+				</p>
+				<div class="post-content">
+					<p>ps -ef 通过标准输出在终端里显示所有进程的信息，一行代表一个进程；grep 'nginx' 命令用来寻找含有nginx的行并输出，也就是说该命令会过滤掉不含nginx的行。管道符号 | 用于将ps -ef的输出转换为grep 'nginx'的输入，于是得到了进程nginx的信息。</p>
+<p>另外，上面命令运行结果的最后一行是grep 'nginx' 这个进程的信息，如果要过滤掉，可以：</p>
+<pre><code>zsh &gt;&gt; ps -ef | grep 'nginx' | grep -v 'grep'
+root      1243     1  0 08:44 ?        00:00:00 nginx: master process /usr/sbin/nginx
+www-data  1244  1243  0 08:44 ?        00:00:00 nginx: worker process
+www-data  1245  1243  0 08:44 ?        00:00:00 nginx: worker process
+www-data  1247  1243  0 08:44 ?        00:00:00 nginx: worker process
+www-data  1248  1243  0 08:44 ?        00:00:00 nginx: worker process
+</code></pre>
+<!--more-->
+
+<pre><code>$ hadoop jar $HADOOP_HOME/contrib/streaming/hadoop-streaming-1.2.1.jar \
+-input /input \
+-output /output \
+-mapper "python mapper.py" \
+-reducer "python reducer.py" \
+-file mapper.py \
+-file reducer.py
+</code></pre>
+<p><img alt="image" src="/images/2014/images.jpeg" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><em>Year</em></th>
+<th></th>
+<th><em>Temperature (low)</em></th>
+<th></th>
+<th><em>Temperature (high)</em></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>1910</td>
+<td></td>
+<td>-15</td>
+<td></td>
+<td>30</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1920</td>
+<td></td>
+<td>-10</td>
+<td></td>
+<td>32</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="image" src="/imgages/BikeTour.jpg" /> 
+hello
+world</p>
+<table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td><strong>Content Cell</strong></td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<!--more-->
+
+<h2>资料</h2>
+<pre><code>import sys
+print 'hi'
+</code></pre>
+<pre>
+<code class="language-python">
+import `sys`
+print 'hi'
+if 1 == 1:
+    print 'hi'
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th align="center">Are</th>
+<th align="right">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col 3 is</td>
+<td align="center">right-aligned</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td align="center">centered</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">$1</td>
+</tr>
+</tbody>
+</table>
+<p>[latex] q \in R [/latex]</p>
+<p><code>[latex] q \in R [/latex]</code></p>
+<blockquote>
+<p>[latex] q \in R [/latex]</p>
+</blockquote>
+<pre><code>[latex] q \in R [/latex]
+</code></pre>
+				</div>
+				<hr/>
+				<p id="categories">
+					分类：<a href="/category/index.html#oopress" rel="category tag">oopress</a>	
+				</p>	
+				
+				<ul id="tags">
+					
+					<li>
+						<a href="/tag/index.html#test-tag" rel="tag">
+							test-tag
+						</a>
+					</li>
+					
+				</ul>				
+			</div>
+
+		</article>
+					
+
+
+		
+
+		<div id="comments" class="leftPostCol hide600">
+		
+			<h4> Comments</h4>
+			<!--disqus-->
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'oopress'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+			<!--disqus-->
+			
+		</div>
+
+
+        
+
+	</section>
+
+	<footer>
+		<div style="text-align: center" >
+			<p> 声明：您可以转载本站文章，但应注明出处 </p>
+			<p>
+				oopress～ © 2013-2014
+			</p>			
+			
+		</div>
+	</footer>
+	<script type="text/javascript" src="/static/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript" src="/static/easing.js"></script>
+	
+	<script type="text/javascript" src="/static/jquery.ui.totop.min.js"></script>
+
+	<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				*/
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+	</script>
+
+	<script src="/static/prism.js" type="text/javascript"></script>
+	
+	<script type="text/x-mathjax-config"> 
+	MathJax.Hub.Config({ 
+	  tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+	}); 
+	</script>
+	<script type="text/javascript"
+	   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	
+</body>
+</html>
+
+
+
+
+

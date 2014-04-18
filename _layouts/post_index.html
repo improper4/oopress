@@ -1,0 +1,47 @@
+{% extends "default.html" %}
+
+{% block title %}
+{{ '按时间查看' + ' | ' + config.site_title }}
+{% endblock %}
+
+{% block content %}
+
+{% for item in time_posts %}
+
+		<article id="post" class="leftPostCol">
+
+			
+			<div class="post-body">
+				<h2>{{ item[0] }}</h2>
+					{% for it in item[1] %}
+
+							<p><strong>
+							<a href="{{ it[1]['url'] }}">
+								{{ it[1]['title'] }}
+							</a>
+							</strong></p>
+
+					{% endfor %}
+			</div>
+		</article>
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+<div id="main">
+
+{% for year_month in time_posts %}
+	<div>
+		<h1> {{ year_month[0] }} </h1>
+		
+		{% for item in year_month[1] %}
+			<h2><a href="{{ item[1]['url'] }}">{{ item[1]['title'] }}</a></h2>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+</div>

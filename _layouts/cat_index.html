@@ -1,0 +1,45 @@
+{% extends "default.html" %}
+
+{% block title %}
+{{ '按分类查看' + ' | ' + config.site_title }}
+{% endblock %}
+
+{% block content %}
+
+<div id="main">
+
+		<article  class="leftPostCol">
+			<div class="post-body">
+				<h2> 分类： </h2>
+			</div>
+		</article>
+		<article id="post" class="leftPostCol">
+			<div class="post-body">
+				{% for item in cat_infos %}
+					<a href=#{{ cat_infos[item]['anchor'] }} style="font-size:{{ cat_infos[item]['font_size'] }}">{{ item }}</a>
+				{% endfor %}
+			</div>
+		</article>
+		
+{% for cat in cat_posts %}
+    
+		<article id="post" class="leftPostCol">
+
+			<div class="post-body">
+				<a name="{{ cat_infos[cat[0]]['url'].split('#')[-1] }}"></a>
+				<h2>{{ cat[0] }}</h2>
+					
+					{% for item in cat[1] %}
+						<p><strong>
+							{{ item[1]['create_date'] }} &gt;&gt;
+							<a href="{{ item[1]['url'] }}">{{ item[1]['title'] }}</a>
+						</strong></p>
+			        {% endfor %}
+			
+			</div>
+
+		</article>
+{% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "default.html" %}
+
+{% block title %}
+{{ config.site_title + ' | ' + config.site_subtitle }}
+{% endblock %}
+
+{% block description %}
+<meta name="Description" content="樂天笔记一个IT技术博客。">
+{% endblock %}
+
+{% block content %}
+
+<div id="main">
+
+{% for item in recent_post_infos %}
+    
+		<article id="post" class="leftPostCol">
+
+			
+			<div class="post-body">
+				<h2><a href="{{ item[1]['url'] }}">{{ item[1]['title'] }}</a></h2>
+
+				<p class="post-info">
+					<i class="icon-author"></i>作者： {{ item[1]['author'] }} <i class="icon-cal"></i>
+					<time>@ {{ item[1]['create_date'] }}</time>
+					<hr/>
+				</p>
+				
+				<div class="post-content">
+					{{ item[1]['abstract'] }}
+				</div>
+				<p><a href="{{ item[1]['url'] }}">阅读全文>></a></p>
+			</div>
+
+		</article>
+{% endfor %}
+
+</div>
+{% endblock %}
+
+
+{% block more_content %}
+
+		<div id="comments" class="leftPostCol hide600">
+		
+			<h4>
+			<a href="{{ config.site_post_dir }}">
+			更多内容>>
+			</a>
+			</h4>
+			
+		</div>
+
+{% endblock %}

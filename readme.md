@@ -1,0 +1,121 @@
+###简介
+
+oopress是一个静态网站生成工具，使用python开发，用到了markdown、jinja2等第三方库，在Linux下运行稳定。
+
+	oopress/
+	├── _extras
+	│   └── robots.txt
+	├── gen_site.py
+	├── _images
+	│   └── 2014
+	│       └── images.jpeg
+	├── _layouts
+	│   ├── cat_index.html
+	│   ├── default.html
+	│   ├── error.html
+	│   ├── index.html
+	│   ├── page.html
+	│   ├── post.html
+	│   ├── post_index.html
+	│   └── tag_index.html
+	├── _pages
+	│   ├── 关于oopress.md
+	│   ├── 留言本.md
+	│   └── 音乐墙.md
+	├── _posts
+	│   └── 2014
+	│       └── 04
+	│           ├── 2014-04-11-测试.md
+	│           └── 2014-04-18-简易指南.md
+	├── readme.md
+	├── _site
+	│   ├── category
+	│   │   └── index.html
+	│   ├── error.html
+	│   ├── images
+	│   │   └── 2014
+	│   │       └── images.jpeg
+	│   ├── index.html
+	│   ├── post
+	│   │   ├── 2014
+	│   │   │   └── 04
+	│   │   │       ├── 11
+	│   │   │       │   └── 测试.html
+	│   │   │       └── 18
+	│   │   │           └── 简易指南.html
+	│   │   └── index.html
+	│   ├── robots.txt
+	│   ├── static
+	│   │   ├── default.css
+	│   │   ├── easing.js
+	│   │   ├── favicon.png
+	│   │   ├── jquery-1.7.2.min.js
+	│   │   ├── jquery.js
+	│   │   ├── jquery.ui.totop.min.js
+	│   │   ├── prism.css
+	│   │   ├── prism.js
+	│   │   ├── style.css
+	│   │   ├── ui.totop.css
+	│   │   └── ui.totop.png
+	│   ├── tag
+	│   │   └── index.html
+	│   ├── 关于oopress.html
+	│   ├── 留言本.html
+	│   └── 音乐墙.html
+
+
+oopress/_site/目录下的内容是生成的网站内容。
+在目录`oopress/_posts/`中写文章（mardown语法），文章应该以下面的形式开头：
+
+<pre><code>---
+title:简易指南
+layout:post
+time:2014-04-18 09:00
+author:樂天
+cat:oopress
+tag:oopress,test
+---</code></pre>
+
+
+`:`右边是要修改的内容。title指定文章名称；layout制定使用oopress/_layouts下的哪个模板文件；time指定文章书写时间，这个必须要有，且应按照上面示例的形式书写；author指明作者；cat是文章非类；tag是文章标签。上面的文件在构建静态网站时候会生成文件`oopress/_site/2014/04/18/简易指南.html`。
+
+oopress/_page目录下是网站的页面（markdown语法）。文件内容必须如下开头：
+
+<pre><code>---
+title:关于oopress
+layout:page
+time:2014-04-07 18:00
+---</code></pre>
+这些文件会被转换成html放在oopress/_site/下。
+
+
+oopress/_extra下的文件会被直接复制到oopress/_site目录下。
+
+
+oopress/_static下的文件会被直接复制到oopress/static目录下。
+
+
+oopress/_images下的文件会被直接复制到oopress/images目录下。
+
+###生成网站
+
+<!--more-->
+
+在写完文章后，执行：
+
+    ./oopress/gen_site.py
+
+##如何在本地测试生成的网站
+
+进入_site：
+
+    cd oopress/_site
+    python -m SimpleHTTPServer
+
+打开浏览器访问http://127.0.0.1:8000。
+
+###如何部署到远程主机
+
+    rsync -ravzhe  ssh ./oopress/_site user@115.114.208.100:/var/www
+
+

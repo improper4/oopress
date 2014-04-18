@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+	<title>{% block title %}{% endblock %}</title>
+	{% block description %}{% endblock %}
+
+	<link rel="stylesheet" type="text/css" href="{{ config.site_static_dir }}/default.css" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ config.site_static_dir }}/ui.totop.css" media="all">
+	<link rel="stylesheet" href="{{ config.site_static_dir+'/' }}prism.css" />
+	<link rel="stylesheet" href="{{ config.site_static_dir+'/' }}style.css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">	
+
+	
+	
+
+	<link rel="shortcut icon" type="image/x-icon" href="{{ config.site_static_dir }}/favicon.png">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+
+
+	<header>
+
+		<h1><a title="Home" href="/" id="logo"><b>{{ config.site_title }}</b></a></h1>
+
+		<nav class="Tutorials">
+		{% for item in sorted_page_infos %}
+			<a href="{{ item[1]['url'] }}" class="active">{{ item[1]['title'] }}</a>
+		{% endfor %}
+		</nav>
+
+		<a class="searchIcon" href="https://www.google.com.hk/search?q=site%3Ablog.letiantian.me&oq=site%3Ablog.letiantian.me" target="_blank">
+		</a>
+
+	</header>
+
+<section id="content">
+		<aside style="" id="sidebar">
+
+			<div class="sidebar-group about">
+				<p>天天向上</p>
+				
+			</div>
+
+
+			<div class="sidebar-group posts">
+				<h5 class="active">搜索</h5>
+				<ul class="active">
+										
+					<li>
+						<a href="https://www.google.com.hk/search?q=site%3Ablog.letiantian.me&oq=site%3Ablog.letiantian.me" target="_blank">
+							<span class="title">
+								Google
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.baidu.com/#wd=site%3Ablog.letiantian.me"  target="_blank">
+							<span class="title">
+								Baidu
+							</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			
+			<div class="sidebar-group posts">
+				<h5 class="active">查看文章</h5>
+				<ul class="active">
+										
+					<li>
+						<a href="{{ config.site_post_dir }}">
+							<span class="title">
+								按日期查看
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ config.site_category_dir }}">
+							<span class="title">
+								按分类查看
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ config.site_tag_dir }}">
+							<span class="title">
+								按标签查看
+							</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			
+			<div class="sidebar-group posts">
+				<h5 class="active">近期文章</h5>
+				<ul class="active">
+				
+				{% for item in recent_post_infos %}
+										
+					<li>
+						<a href="{{ item[1]['url'] }}">
+							<span class="title">
+								{{ item[1]['title'] }}
+							</span>
+						</a>
+					</li>
+				{% endfor %}
+				</ul>
+
+			</div>
+
+			<div class="sidebar-group posts">
+				<h5 class="active" >分类目录</h5>
+				<ul class="active">
+				
+				{% for item in cat_infos %}
+										
+					<li>
+						<a href="{{ cat_infos[item]['url'] }}">
+							<span class="title">
+								{{ item }}
+							</span>
+						</a>
+					</li>
+				{% endfor %}
+				</ul>
+
+			</div>
+			
+
+			
+
+			
+			<div class="sidebar-group posts">
+				<h5 class="active" >链接</h5>
+				<ul  class="active">
+					<li>
+						<a href="http://hei-boy.tumblr.com/">
+							<span class="title">
+								嘿，boy
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://my.oschina.net/lotte1699/blog">
+							<span class="title">
+								樂天@OSC
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/someus">
+							<span class="title">
+								樂天@GitHub
+							</span>
+						</a>
+					</li>										
+				</ul>
+
+			</div>
+
+
+		</aside>
+		
+		<!-- 文章 -->
+		{% block content %}{% endblock %}					
+
+
+		{% block more_content %}{% endblock %}
+        
+
+	</section>
+
+	<footer>
+		<div style="text-align: center" >
+			<p> 声明：您可以转载本站文章，但应注明出处 </p>
+			<p>
+				{{ config.site_title }} © 2013-2014
+			</p>			
+			
+		</div>
+	</footer>
+	<script type="text/javascript" src="{{ config.site_static_dir }}/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript" src="{{ config.site_static_dir }}/easing.js"></script>
+	
+	<script type="text/javascript" src="{{ config.site_static_dir }}/jquery.ui.totop.min.js"></script>
+
+	<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				*/
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+	</script>
+
+	<script src="{{ config.site_static_dir}}/prism.js" type="text/javascript"></script>
+	
+	<script type="text/x-mathjax-config"> 
+	MathJax.Hub.Config({ 
+	  tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+	}); 
+	</script>
+	<script type="text/javascript"
+	   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	
+</body>
+</html>
+
+
+
+
+
+

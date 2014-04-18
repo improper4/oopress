@@ -1,0 +1,22 @@
+#toTop {
+	z-index:10;
+}
+
+.post-content h2 {
+    background-color: #F8F8F8;
+    border-left: thick solid #008000;
+    color: #008800;
+    margin: 20px 0 10px;
+    padding: 10px 0 10px 10px;
+
+}
+
+.post-content h3 {
+    background-color: #F8F8F8;
+    color: #008800;
+    margin: 20px 0 10px;
+    padding: 10px 0 10px 10px;
+
+}
+
+
