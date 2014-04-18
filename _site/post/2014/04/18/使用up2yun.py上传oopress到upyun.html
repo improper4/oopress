@@ -5,7 +5,7 @@
 
 
 	<title>
-Error | oopress～
+使用up2yun.py上传oopress到upyun | oopress～
 </title>
 	
 
@@ -206,7 +206,49 @@ Error | oopress～
 
 			
 			<div class="post-body">
-				<h2>您请求的内容不存在。</h2>				
+				<h2>使用up2yun.py上传oopress到upyun</h2>
+
+				<p class="post-info">
+					<i class="icon-author"></i>作者： 樂天 <i class="icon-cal"></i>
+					<time>@ 2014-04-18</time>
+					<hr/>
+				</p>
+				<div class="post-content">
+					<p>找到<code>oopress/up2yun.py</code>，打开文件，在：</p>
+<pre><code>if __name__ == '__main__':
+
+    bucket_name = 'your-bucket-name'
+    user_name = 'your-name'
+    passwd = 'your-password'
+</code></pre>
+<p>处配置您的信息。保存文件后：
+清空您的bucket：</p>
+<pre><code>python up2yun.py clean
+</code></pre>
+<p>上传您的网站内容（oopress/_site）到upyun：</p>
+<pre><code>python up2yun.py upload
+</code></pre>
+				</div>
+				<hr/>
+				<p id="categories">
+					分类：<a href="/category/index.html#oopress" rel="category tag">oopress</a>	
+				</p>	
+				
+				<ul id="tags">
+					
+					<li>
+						<a href="/tag/index.html#oopress" rel="tag">
+							oopress
+						</a>
+					</li>
+					
+					<li>
+						<a href="/tag/index.html#upyun" rel="tag">
+							upyun
+						</a>
+					</li>
+					
+				</ul>				
 			</div>
 
 		</article>
@@ -214,6 +256,31 @@ Error | oopress～
 
 
 		
+
+		<div id="comments" class="leftPostCol hide600">
+		
+			<h4> Comments</h4>
+			<!--disqus-->
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'oopress'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+			<!--disqus-->
+			
+		</div>
+
+
         
 
 	</section>

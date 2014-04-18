@@ -4,10 +4,9 @@
 Created on Apr 14, 2014
 @author: sunlt
 
-static_dir中的内容会被复制到site_static_dir中。
-img_dir中的内容会被复制到site_img_dir中。
-/page/2用来访问文章列表的第2分页
-/关于.html是真正的page。
+oopress生成工具。
+
+本程序在Linux Mint 16下运行正常。
 '''
 
 import jinja2
@@ -120,7 +119,7 @@ def getBaseInfoOfPosts(config, post_list):
     ---
     title:关于樂天笔记
     layout:page
-    create_time:2014-04-07 18:00
+    time:2014-04-07 18:00
     author:樂天
     cat:云计算
     tag:java,hadoop
@@ -200,7 +199,7 @@ def getBaseInfoOfPages(config, page_list):
     ---
     title:关于樂天笔记
     layout:page
-    create_time:2014-04-07 18:00
+    time:2014-04-07 18:00
     ---
     '''
 
@@ -590,8 +589,6 @@ def copyExtrasToSite(config):
     ''' '''
     from_dir = config['app_path'] + config['extra_dir']
     to_dir = config['app_path'] + config['site_dir']
-    print 
-    file_path = []
     for root, dirs, files in os.walk(from_dir):
         print root, dirs, files
         for f in files:

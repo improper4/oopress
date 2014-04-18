@@ -87,21 +87,21 @@ oopress简易指南 | oopress～
 				<ul class="active">
 										
 					<li>
-						<a href="/post">
+						<a href="/post/index.html">
 							<span class="title">
 								按日期查看
 							</span>
 						</a>
 					</li>
 					<li>
-						<a href="/category">
+						<a href="/category/index.html">
 							<span class="title">
 								按分类查看
 							</span>
 						</a>
 					</li>
 					<li>
-						<a href="/tag">
+						<a href="/tag/index.html">
 							<span class="title">
 								按标签查看
 							</span>
@@ -115,6 +115,15 @@ oopress简易指南 | oopress～
 				<h5 class="active">近期文章</h5>
 				<ul class="active">
 				
+				
+										
+					<li>
+						<a href="/post/2014/04/18/使用up2yun.py上传oopress到upyun.html">
+							<span class="title">
+								使用up2yun.py上传oopress到upyun
+							</span>
+						</a>
+					</li>
 				
 										
 					<li>
@@ -213,6 +222,7 @@ oopress简易指南 | oopress～
 ├── gen_site.py
 ├── _images
 │   └── 2014
+│       ├── demo.png
 │       └── images.jpeg
 ├── _layouts
 │   ├── cat_index.html
@@ -231,6 +241,7 @@ oopress简易指南 | oopress～
 │   └── 2014
 │       └── 04
 │           ├── 2014-04-11-测试.md
+│           ├── 2014-04-18-使用up2yun.py上传oopress到upyun.md
 │           └── 2014-04-18-简易指南.md
 ├── readme.md
 ├── _site
@@ -239,6 +250,7 @@ oopress简易指南 | oopress～
 │   ├── error.html
 │   ├── images
 │   │   └── 2014
+│   │       ├── demo.png
 │   │       └── images.jpeg
 │   ├── index.html
 │   ├── post
@@ -247,7 +259,7 @@ oopress简易指南 | oopress～
 │   │   │       ├── 11
 │   │   │       │   └── 测试.html
 │   │   │       └── 18
-│   │   │           └── 简易指南.html
+│   │   │           └── oopress简易指南.html
 │   │   └── index.html
 │   ├── robots.txt
 │   ├── static
@@ -267,6 +279,23 @@ oopress简易指南 | oopress～
 │   ├── 关于oopress.html
 │   ├── 留言本.html
 │   └── 音乐墙.html
+├── _static
+│   ├── default.css
+│   ├── easing.js
+│   ├── favicon.png
+│   ├── jquery-1.7.2.min.js
+│   ├── jquery.js
+│   ├── jquery.ui.totop.min.js
+│   ├── prism.css
+│   ├── prism.js
+│   ├── style.css
+│   ├── ui.totop.css
+│   └── ui.totop.png
+├── tool
+│   ├── base.py
+│   └── __init__.py
+├── up2yun.py
+└── up2yun.sh
 </code></pre>
 <p>oopress/_site/目录下的内容是生成的网站内容。
 在目录<code>oopress/_posts/</code>中写文章（mardown语法），文章应该以下面的形式开头：</p>
@@ -306,6 +335,22 @@ python -m SimpleHTTPServer
 <h3>如何部署到远程主机</h3>
 <pre><code>rsync -ravzhe  ssh ./oopress/_site user@115.114.208.100:/var/www
 </code></pre>
+<h3>如何部署到又拍云</h3>
+<p>找到<code>oopress/up2yun.py</code>，打开文件在：</p>
+<pre><code>if __name__ == '__main__':
+
+    bucket_name = 'your-bucket-name'
+    user_name = 'your-name'
+    passwd = 'your-password'
+</code></pre>
+<p>处配置您的信息。保存文件后：
+清空您的bucket：</p>
+<pre><code>python up2yun.py clean
+</code></pre>
+<p>上传您的网站内容（oopress/_site）到upyun：</p>
+<pre><code>python up2yun.py upload
+</code></pre>
+<p>另外，up2yun.sh参考自网络，也应该可以进行上传，但是因网速等原因，oopress/up2yun.sh暂时未测试。</p>
 				</div>
 				<hr/>
 				<p id="categories">
