@@ -105,17 +105,21 @@ oopress/_images下的文件会被直接复制到oopress/images目录下。
 
     ./oopress/gen_site.py
 
-##如何在本地测试生成的网站
+###如何在本地测试生成的网站
 
 进入_site：
 
     cd oopress/_site
     python -m SimpleHTTPServer
 
-打开浏览器访问http://127.0.0.1:8000。
+打开浏览器访问`http://127.0.0.1:8000`。
 
 ###如何部署到远程主机
 
     rsync -ravzhe  ssh ./oopress/_site user@115.114.208.100:/var/www
 
+
+
+###其他
+oopress/.pydevproject、oopress/.project、oopress/.settings是无关文件。
 
