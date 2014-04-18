@@ -172,3 +172,4 @@ up2yun.py在Linux Mint 15下正常运行。
 ###其他
 oopress/.pydevproject、oopress/.project、oopress/.settings是无关文件。
 
+最近可以在[http://oopress.b0.upaiyun.com](http://oopress.b0.upaiyun.com)下看到示例。（2014-04-18）
