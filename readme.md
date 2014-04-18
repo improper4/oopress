@@ -2,6 +2,8 @@
 
 oopress是一个静态网站生成工具，使用python开发，用到了markdown、jinja2等第三方库，在Linux下运行稳定。
 
+![image](./_images/2014/demo.png)
+
 	oopress/
 	├── _extras
 	│   └── robots.txt
